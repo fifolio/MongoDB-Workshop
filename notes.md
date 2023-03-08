@@ -1,4 +1,4 @@
-SQL & NoSQL:
+**SQL & NoSQL:**
 
 SQL:
 --- (Structured Query Language).
@@ -49,3 +49,32 @@ Aggregation:
 
 * Here, query is a required parameter that specifies the query conditions to select the document(s) to update, update is a required parameter that specifies the modification to apply, and options is an optional parameter that specifies additional options such as whether to create a new document if the query doesn't match any existing documents.
   To add a new field to a document, you can use the $set operator with the new field name and value. For example, to add a new field called "email" with the value "john.doe@example.com" to a document in the "users" collection where the "_id" field is "12345", the following code can be used: db.users.update({_id: "12345"}, {$set: {email: "john.doe@example.com"}});
+
+---
+
+# Relationships:
+
+There are 3 types of relationships to be dealt with:
+
+- 1:1 (one-to-one) relationship,
+- 1:m (one-to-group) relationship,
+- m:m relationship (group by group).
+
+# There are two ways to apply binding:
+
+1. Embedded
+
+- It is a method of linking the two files to each other by including a (Document) file inside a (Document) file. It is often preferable to use this method if the linking relationship is one-to-one because it helps to retrieve two files with only one query, which contributes to increasing Efficiency of the query process.
+
+2. Using \_id
+
+- The traditional way of joining two files from two different groups and related to each other using a single field.
+
+# One-to-many relationship
+
+Describes a data model that uses embedded documents to describe a one-to-many relationship between connected data.
+
+> There are two ways to apply this link:
+
+- Type 1 (Normalization):
+- Type 2 (Deormalization):
